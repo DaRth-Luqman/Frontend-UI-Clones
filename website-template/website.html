@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1vw 5vw;
+        }
+
+        .logo {
+            width: 5vw;
+            height: 5vw;
+        }
+
+        .nav {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: grey;
+            padding: 1vw;
+            font-size: 2vw;
+        }
+
+        .nav a:hover {
+            background-color: aliceblue;
+        }
+
+        .nav a:active {
+            background-color: rgb(255, 255, 203);
+        }
+
+        .hero {
+            background-color: rgb(219, 219, 219);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 3vw;
+            padding: 11vw;
+            margin: 1vw 0;
+        }
+
+        h1 {
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 900;
+            font-style: normal;
+            font-size: 3vw;
+        }
+
+        p {
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2vw;
+        }
+
+        .hero button {
+            border-radius: 50px;
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1vw;
+            padding: 1vw;
+            border: 1px solid black;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background-color: aliceblue;
+        }
+
+        .hero button:active {
+            background-color: rgb(255, 255, 203);
+        }
+
+        .aboutus {
+            padding: 1vw 5vw;
+            text-align: justify;
+            margin: 4vw 0;
+        }
+
+        .aboutus h1 {
+            margin-bottom: 1vw;
+        }
+
+        .aboutus p {
+            margin-bottom: 1vw;
+        }
+
+        .services {
+            background-color: rgb(219, 219, 219);
+            padding: 5vw 5vw;
+        }
+
+        .services h1 {
+            margin-bottom: 1vw;
+        }
+
+        .cards {
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: 28vw 28vw 28vw;
+            gap: 1vw;
+        }
+
+        .card img {
+            width: 28vw;
+            height: 20vw;
+            border-radius: 20px;
+            margin-bottom: 1vw;
+        }
+
+        .card h2 {
+            margin-bottom: 1vw;
+        }
+
+        h2 {
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+            font-size: 2.5vw;
+        }
+
+        .card:hover {
+            background-color: aliceblue;
+            border-radius: 20px;
+            cursor: pointer;
+            padding: 1vw;
+        }
+
+        .card:hover img {
+            width: 26vw;
+            height: 18vw;
+        }
+
+        .card:hover h2 {
+            font-size: 2.3vw;
+        }
+
+        .card:hover p {
+            font-size: 1.8vw;
+        }
+
+        .card:active {
+            background-color: rgb(255, 255, 203);
+        }
+
+        .testimonial {
+            padding: 5vw 5vw;
+        }
+
+        .tcards {
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: 28vw 28vw 28vw;
+            gap: 1vw;
+            text-align: center;
+        }
+
+        .testimonial h1 {
+            margin-bottom: 2vw;
+        }
+
+        .tcard img {
+            width: 10vw;
+            height: 10vw;
+            border-radius: 50%;
+            margin-bottom: 1vw;
+        }
+
+        .tcard h2 {
+            margin-bottom: 1vw;
+        }
+
+        .tcard p {
+            margin-bottom: 1vw;
+        }
+
+        .tcard:hover {
+            background-color: aliceblue;
+            border-radius: 20px;
+            cursor: pointer;
+            padding: 1vw;
+        }
+
+        .tcard:hover img {
+            width: 15vw;
+            height: 15vw;
+        }
+
+        .tcard:hover h2 {
+            font-size: 2.3vw;
+        }
+
+        .tcard:hover p {
+            font-size: 1.8vw;
+        }
+
+        .tcard:active {
+            background-color: rgb(255, 255, 203);
+        }
+
+        .contactus {
+            background-color: rgb(219, 219, 219);
+            padding: 5vw 5vw;
+        }
+
+        .contactus h1 {
+            margin-bottom: 1vw;
+        }
+
+        .contactus p {
+            margin-bottom: 1vw;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1vw;
+        }
+
+        input {
+            width: 20vw;
+            border-radius: 5px;
+            border: 1px solid black;
+            caret-color: black;
+            height: 3vw;
+        }
+
+        input:focus {
+            background-color: aliceblue;
+            border: 1px solid black;
+            outline: 1px solid black;
+        }
+
+        .message {
+            width: 40vw;
+            height: 10vw;
+        }
+
+        form button {
+            border-radius: 50px;
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1vw;
+            padding: 1vw;
+            border: 1px solid black;
+            width: 10vw;
+        }
+
+        form button:hover {
+            background-color: aliceblue;
+        }
+
+        form button:active {
+            background-color: rgb(255, 255, 203);
+        }
+
+        .imagegallery {
+            padding: 5vw 5vw;
+        }
+
+        .imggal {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            text-align: center;
+            gap: 1vw;
+        }
+
+        .officeimg {
+            width: 100%;
+            height: 17vw;
+        }
+
+        .imagegallery h1 {
+            margin-bottom: 2vw;
+        }
+
+        footer {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            padding: 5vw;
+            list-style-type: none;
+            background-color: rgb(219, 219, 219);
+        }
+
+        .nav1 {
+            list-style-type: none;
+        }
+
+        .nav1 a {
+            text-decoration: none;
+            color: grey;
+            font-size: 2vw;
+        }
+
+        .socialmediaicons h1 {
+            margin-bottom: 1vw;
+        }
+
+        .icons {
+            list-style-type: none;
+            margin-bottom: 1vw;
+            font-size: 2vw;
+        }
+
+        .icons span {
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .icons a {
+            color: grey;
+        }
+
+        footer h1 {
+            font-weight: 700;
+            font-size: 2vw;
+        }
+
+        footer p {
+            font-size: 1vw;
+        }
+
+        .hidemain {
+            display: none;
+        }
+
+        @media (max-width:390px) {
+            header {
+                padding: 1vw;
+            }
+
+            .logo {
+                width: 10vw;
+                height: 10vw;
+            }
+
+            .nav a {
+                vertical-align: middle;
+                font-size: 4vw;
+            }
+
+            .hero {
+                padding: 3vw;
+                margin: 0;
+            }
+
+            .hero h1 {
+                font-size: 15vw;
+            }
+
+            .hero p {
+                font-size: 6vw;
+            }
+
+            .hero button {
+                font-size: 4vw;
+            }
+
+            .hero span {
+                display: block;
+            }
+
+            .aboutus h1 {
+                font-size: 10vw;
+                text-align: center;
+            }
+
+            .hide {
+                display: none;
+            }
+
+            .aboutus p {
+                font-size: 5vw;
+            }
+
+            .services h1 {
+                font-size: 10vw;
+                text-align: center;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                justify-content: initial;
+                gap: 3vw;
+            }
+
+            .card img,
+            .card:hover img {
+                width: 100%;
+                height: 60vw;
+            }
+
+            .card h2,
+            .card:hover h2 {
+                font-size: 5vw;
+            }
+
+            .card p,
+            .card:hover p {
+                font-size: 3vw;
+            }
+
+            .card:hover {
+                padding: 2vw;
+            }
+
+            .avatar {
+                flex: 0 0 auto;
+            }
+
+            .hidemain {
+                display: block;
+                flex: 0 0 auto;
+            }
+
+            .testimonial {
+                overflow: hidden;
+            }
+
+            .tcards {
+                display: inline-flex;
+                animation: scroll-left 15s linear infinite;
+            }
+
+            @keyframes scroll-left {
+                from {
+                    transform: translateX(0);
+                }
+
+                to {
+                    transform: translateX(-50%);
+                }
+            }
+            .tcards:hover{
+                animation-play-state: paused;
+            }
+
+            .testimonial h1 {
+                text-align: center;
+                font-size: 10vw;
+            }
+
+            .tcard {
+                width: 100vw;
+                padding: 2vw;
+            }
+
+            .tcard img,
+            .tcard:hover img {
+                width: 15vw;
+                height: 15vw;
+            }
+
+            .tcard h2,
+            .tcard:hover h2 {
+                font-size: 5vw;
+            }
+
+            .tcard p,
+            .tcard:hover p {
+                font-size: 4vw;
+            }
+
+            .contactus h1 {
+                text-align: center;
+                font-size: 10vw;
+            }
+
+            .contactus p {
+                font-size: 5vw;
+                margin-bottom: 2vw;
+            }
+
+            input {
+                width: 40vw;
+                height: 5vw;
+            }
+
+            .message {
+                width: 60vw;
+                height: 10vw;
+            }
+
+            .contactus button {
+                font-size: 3vw;
+                width: max-content;
+                padding: 2vw;
+            }
+
+            .imagegallery {
+                overflow: hidden;
+                margin-bottom: 5vw;
+            }
+
+            .imggal {
+                display: inline-flex;
+                animation: scroll-left1 20s linear infinite;
+            }
+
+            @keyframes scroll-left1 {
+                from {
+                    transform: translateX(0);
+                }
+
+                to {
+                    transform: translateX(-50%);
+                }
+            }
+
+            .officeimg {
+                height: 100%;
+                flex: 0 0 auto;
+            }
+
+            .image {
+                width: 100vw;
+            }
+
+            .imagegallery h1 {
+                text-align: center;
+                font-size: 10vw;
+            }
+
+            .imagegallery p {
+                font-size: 4vw;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+                gap: 2vw;
+                padding: 5vw;
+            }
+
+            footer h1 {
+                font-size: 6vw;
+            }
+
+            footer p {
+                font-size: 3vw
+            }
+
+            .nav1 {
+                margin: 0;
+                padding: 0;
+            }
+
+            .nav1 a {
+                font-size: 4vw;
+                margin: 0;
+                padding: 0;
+            }
+
+            .icons a {
+                font-size: 4vw;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#"><img src="download (1).png" alt="logo" class="logo"></a>
+        <ul class="nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#aboutus">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contactus">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+        <div id="home" class="hero">
+            <h1>Welcome <span>To Our</span> Website</h1>
+            <p>All Tools Under One Hood</p>
+            <button type="button">Get Started</button>
+        </div>
+        <div id="aboutus" class="aboutus">
+            <h1>About Us</h1>
+            <p>At our core, we are a team of designers, developers, and creative thinkers driven by a shared passion for
+                building meaningful digital experiences. Our mission is to craft user-focused websites and interfaces
+                that are both visually striking and technically sound.</p>
+            <p class="hide">With a focus on clean design, responsive layouts, and performance optimization, we bring
+                ideas to life
+                through modern web technologies. Every project we take on is an opportunity to innovate, solve problems,
+                and deliver results that exceed expectations.</p>
+            <p class="hide">Whether you're a startup or an established brand, we're here to help you stand out online
+                with a design
+                that speaks for itself.</p>
+        </div>
+        <div id="services" class="services">
+            <h1>Our Services</h1>
+            <div class="cards">
+                <div class="card">
+                    <img src="download (1).jpeg" alt="cwd" class="carimg">
+                    <h2>Website Designing</h2>
+                    <p>We design visually engaging and user-friendly websites tailored to your brand, ensuring a
+                        seamless
+                        experience across all devices.</p>
+                </div>
+                <div class="card">
+                    <img src="download (2).jpeg" alt="fd" class="carimg">
+                    <h2>Frontend Development</h2>
+                    <p>Using HTML, CSS, JavaScript, and modern frameworks, we build responsive, fast, and scalable
+                        interfaces optimized for performance and usability.</p>
+                </div>
+                <div class="card">
+                    <img src="download (3).jpeg" alt="uip" class="carimg">
+                    <h2>UI/UX Prototyping</h2>
+                    <p>We create interactive wireframes and design systems that prioritize user flow and visual
+                        hierarchy,
+                        turning ideas into intuitive experiences.</p>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial">
+            <h1>Testimonial</h1>
+            <div class="tcards">
+                <div class="tcard">
+                    <img src="download (5).jpeg" alt="person" class="avatar">
+                    <p>“Their attention to detail is unmatched. The final website not only looks great but performs
+                        flawlessly on all devices. Highly recommended!”</p>
+                    <h2>Sarah K.</h2>
+                    <p>Creative Director</p>
+                </div>
+                <div class="tcard">
+                    <img src="download (4).jpeg" alt="person" class="avatar">
+                    <p>“From wireframes to launch, they handled everything professionally. Communication was smooth, and
+                        the results exceeded our expectations.”</p>
+                    <h2>Jason M.</h2>
+                    <p>Startup Founder</p>
+                </div>
+                <div class="tcard">
+                    <img src="download (6).jpeg" alt="person" class="avatar">
+                    <p>“They brought our vision to life with clean design and fast loading pages. We've seen a
+                        noticeable improvement in user engagement.”</p>
+                    <h2>Ayesha R.</h2>
+                    <p>Marketing Manager</p>
+                </div>
+                <div class="tcard hidemain">
+                    <img src="download (5).jpeg" alt="person" class="avatar">
+                    <p>“Their attention to detail is unmatched. The final website not only looks great but performs
+                        flawlessly on all devices. Highly recommended!”</p>
+                    <h2>Sarah K.</h2>
+                    <p>Creative Director</p>
+                </div>
+                <div class="tcard hidemain">
+                    <img src="download (4).jpeg" alt="person" class="avatar">
+                    <p>“From wireframes to launch, they handled everything professionally. Communication was smooth, and
+                        the results exceeded our expectations.”</p>
+                    <h2>Jason M.</h2>
+                    <p>Startup Founder</p>
+                </div>
+                <div class="tcard hidemain">
+                    <img src="download (6).jpeg" alt="person" class="avatar">
+                    <p>“They brought our vision to life with clean design and fast loading pages. We've seen a
+                        noticeable improvement in user engagement.”</p>
+                    <h2>Ayesha R.</h2>
+                    <p>Marketing Manager</p>
+                </div>
+            </div>
+        </div>
+        <div id="contactus" class="contactus">
+            <h1>Contact Us</h1>
+            <p>Need Help ? Leave a Meassage below:</p>
+            <form>
+                <input type="text" id="name" placeholder=" Name">
+                <input type="email" id="email" placeholder=" Email">
+                <input class="message" type="text" id="querry" placeholder=" Leave Your Meassage">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="imagegallery">
+            <h1>Image Gallery</h1>
+            <div class="imggal">
+                <div class="image">
+                    <img src="download (7).jpeg" alt="office" class="officeimg">
+                    <p>Modern Workspace Setup</p>
+                </div>
+                <div class="image">
+                    <img src="download (8).jpeg" alt="office" class="officeimg">
+                    <p>Collaborative Meeting Area</p>
+                </div>
+                <div class="image">
+                    <img src="download (9).jpeg" alt="office" class="officeimg">
+                    <p>Creative Studio Environment</p>
+                </div>
+                <div class="image">
+                    <img src="download (10).jpeg" alt="office" class="officeimg">
+                    <p>Tech-Driven Work Zone</p>
+                </div>
+                <div class="image hidemain">
+                    <img src="download (7).jpeg" alt="office" class="officeimg">
+                    <p>Modern Workspace Setup</p>
+                </div>
+                <div class="image hidemain">
+                    <img src="download (8).jpeg" alt="office" class="officeimg">
+                    <p>Collaborative Meeting Area</p>
+                </div>
+                <div class="image hidemain">
+                    <img src="download (9).jpeg" alt="office" class="officeimg">
+                    <p>Creative Studio Environment</p>
+                </div>
+                <div class="image hidemain">
+                    <img src="download (10).jpeg" alt="office" class="officeimg">
+                    <p>Tech-Driven Work Zone</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="quicklinks">
+            <h1>Quick Links</h1>
+            <ul class="nav1">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#aboutus">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contactus">Contact</a></li>
+            </ul>
+        </div>
+        <div class="socialmediaicons">
+            <h1>Social Media Icons</h1>
+            <ul class="icons">
+                <li><a href="#"><i class="fa-brands fa-instagram"> <span>Instagram</span></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"> <span>LinkedIn</span></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-x-twitter"> <span>Twitter/X</span></i></a></li>
+            </ul>
+        </div>
+        <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
